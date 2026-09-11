@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --White: hsl(0, 0%, 100%);
+    --Blue-200: hsl(224, 71%, 86%) ;
+    --Blue-400: hsl(220, 100%, 64%);
+    --Blue-600: hsl(228, 100%, 60%);
+    --Blue-700: hsl(228, 99%, 58%) ;  
+    --Black: hsl(0, 0%, 0%);
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--Blue-600);
+    font-family: 'inter', 'Times New Roman', Times, serif;
+    font-weight: 400;
+}
+
+header{
+    padding: 20px;
+    border-bottom: 1px solid var(--Blue-400);
+}
+
+header > nav{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    color: var(--White);
+    align-items: center
+}
+
+nav > .logo > a{
+    color: inherit;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.circle{
+    font-size: 20px;
+}
+
+main{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+section.hero{
+    padding: 25px;
+}
+section.hero > h1{
+    line-height: 1.2em;
+    font-weight: 500;
+    margin-bottom: 20px;
+    font-size: 34px;
+    color: var(--White);
+}
+
+section.hero > p{
+    color:var(--Blue-200) ;
+    font-size: 17px;
+    line-height: 1.5em;
+
+}
+
