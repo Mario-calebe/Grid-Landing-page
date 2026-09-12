@@ -1,0 +1,32 @@
+main{
+    grid-template:1fr / 1fr 1fr ;
+}
+
+section.hero{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+}
+
+section.hero > h1{
+    font-size: 3.5em;
+}
+section.hero > h1,
+section.hero > p{
+    width: 385px;
+}
+
+
+section.metrics{
+    grid-template: 1fr 1fr/ 1fr 1fr;
+}
+
+section.hero, .metric-item{
+    border-right: 1px solid var(--Blue-400);
+
+}
+
+footer{
+    flex-direction: row;
+    justify-content: space-between;
+}
