@@ -26,6 +26,8 @@ html::-webkit-scrollbar{
 }
 
 header{
+    position: relative;
+
     padding: 20px;
     border-bottom: 1px solid var(--Blue-400);
 }
@@ -46,6 +48,40 @@ nav > .logo > a{
 
 .circle{
     font-size: 20px;
+}
+button.menu{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    height: 24px;
+}
+
+.menu-aberto{
+    display: none;
+    flex-flow: column wrap;
+    text-align: right;
+    gap: 15px;
+
+    text-align: center;
+    width: 100vw;
+    background-color: var(--Blue-700);
+    font-size: 26px;
+    padding: 30px 0px;
+
+    position: absolute;
+    left: 0%;
+    top: 102%;
+
+}
+
+.menu-aberto > a {
+    text-decoration: none;
+    color: var(--White);
+    font-weight: 500;
+}
+
+.menu-aberto > a:hover{
+    text-decoration: underline;
 }
 
 main{
