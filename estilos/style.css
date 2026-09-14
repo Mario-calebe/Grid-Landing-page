@@ -56,8 +56,12 @@ button.menu{
     height: 24px;
 }
 
-.menu-aberto{
+.menu-fechado{
     display: none;
+}
+
+.menu-aberto{
+    display: flex;
     flex-flow: column wrap;
     text-align: right;
     gap: 15px;
