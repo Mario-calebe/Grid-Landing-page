@@ -2,6 +2,12 @@ main{
     grid-template:1fr / 1fr 1fr ;
 }
 
+.menu-aberto{
+    width: 25vw;
+    height: 100vh;
+    left: 75%;
+}
+
 section.hero{
     display: flex;
     flex-flow: column wrap;
