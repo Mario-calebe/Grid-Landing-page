@@ -11,15 +11,17 @@
     --Blue-400: hsl(220, 100%, 64%);
     --Blue-600: hsl(228, 100%, 60%);
     --Blue-700: hsl(228, 99%, 58%) ;  
-    --Black: hsl(0, 0%, 0%);
+    --Black: hsla(0, 0%, 0%, 0.253);
 }
 
-body,html{
-    height: 100vh;
+html{
+    background-color: var(--Blue-700);
+}
+body{
     background-color: var(--Blue-700);
     font-family: 'inter', 'Times New Roman', Times, serif;
     font-weight: 400;
-    scrollbar-width: none;
+    
 }
 html::-webkit-scrollbar{
     display: none;
@@ -27,7 +29,8 @@ html::-webkit-scrollbar{
 
 header{
     position: relative;
-
+    z-index: 3;
+    background-color: var(--Blue-700);
     padding: 20px;
     border-bottom: 1px solid var(--Blue-400);
 }
@@ -37,7 +40,7 @@ header > nav{
     flex-flow: row nowrap;
     justify-content: space-between;
     color: var(--White);
-    align-items: center
+    align-items: center;
 }
 
 nav > .logo > a{
@@ -86,6 +89,20 @@ button.menu{
 
 .menu-aberto > a:hover{
     text-decoration: underline;
+}
+
+.overlay{
+    position: absolute;
+    z-index: 2;
+    inset: 0;
+    background-color:var(--Black);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.over-ativo{
+    opacity: 1;
+    pointer-events: auto;
 }
 
 main{
@@ -165,6 +182,5 @@ footer{
     color: var(--Blue-200);
     font-size: 14px;
     padding: 20px;
-    line-height: 1.5em;
     font-weight: 500;
 }

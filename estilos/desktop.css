@@ -1,11 +1,17 @@
+body{
+    height: 100vh;
+}
+
 main{
     grid-template:1fr / 1fr 1fr ;
 }
 
 .menu-aberto{
     width: 25vw;
-    height: 100vh;
+    height: calc(100vh - 65px);
     left: 75%;
+    text-align: right;
+    padding-right: 30px;
 }
 
 section.hero{
