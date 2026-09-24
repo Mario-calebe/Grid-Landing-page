@@ -1,64 +1,69 @@
-let menu = document.getElementById('menu')
-let dropdown = document.querySelector('div.menu-fechado')
-let overlay = document.querySelector('.overlay')
-let linksFocaveis = dropdown.querySelectorAll('a')
-let primeiroElemento = linksFocaveis[0]
-let ultimoElemento = linksFocaveis[linksFocaveis.length - 1]
-let valores = document.querySelectorAll('.stat-value')
+const menu = document.getElementById('menu')
+const dropdown = document.querySelector('div.menu-fechado')
+const overlay = document.querySelector('.overlay')
+const linksFocaveis = dropdown.querySelectorAll('a')
+const primeiroElemento = linksFocaveis[0]
+const ultimoElemento = linksFocaveis[linksFocaveis.length - 1]
 
+const valores = document.querySelectorAll('.stat-value')
+const infoStats = [
+    {
+        target: 2.4,
+        step: 0.1,
+        sufixo: 'M',
+        interval: 70,
+    },
+    {
+        target: 1284,
+        step: 2,
+        sufixo: '',
+        interval: 1,
+    },
+    {
+        target: 38,
+        step: 0.2,
+        sufixo: 'K',
+        interval: 10,
+    },
+    {
+        target: 3.1,
+        step: 0.12,
+        sufixo: 'x',
+        interval:97,
+    },
+]
 // Abre e fecha o menu
 menu.addEventListener('click', (e) =>{
-
+    
     if (menuEstaAberto()){
-
+        
         fecharMenu()
     }else{
-
+        
         abrirMenu()
     }
-
-})
-//Contagem das estatisticas apartir do zeroa
-let twoMilion = 0
-let oneThousand = 0
-let thirtyThousand = 0
-let threeTimes = 0
-
-let firstValue = setInterval(() => {
-    twoMilion += 0.1
-    valores[0].textContent = `${twoMilion.toFixed(1)}M`
-
-    if (twoMilion >= 2.4) {
-        clearInterval(firstValue)
-    }
-}, 70);
-
-let secondValue = setInterval(() => {
-    oneThousand += 2
-    valores[1].textContent = `${oneThousand.toLocaleString('en-US')}`
     
-    if (oneThousand >= 1284) {
-        clearInterval(secondValue)
-    }
-}, 3.5);
+})
 
-let thirdValue = setInterval(() => {
-    thirtyThousand += 0.2
-    valores[2].textContent = `${thirtyThousand.toFixed(0)}K`
+//Contagem das estatisticas apartir do zeroa
 
-    if (thirtyThousand >= 38) {
-        clearInterval(thirdValue)
-    }
-}, 14);
+valores.forEach((metric,indice) =>{
+    // infoStats[indice].target
+    let baseValue = 0
+    let contador = setInterval(() => {
+        baseValue += infoStats[indice].step
+        if (Number.isInteger(baseValue)) {
+            metric.textContent = `${baseValue.toLocaleString('en-US')}${infoStats[indice].sufixo}`
 
-let fourthValue = setInterval(() => {
-    threeTimes += 0.12
-    valores[3].textContent = `${threeTimes.toFixed(1)}x`
+        }else{
+            metric.textContent = `${baseValue.toFixed(1)}${infoStats[indice].sufixo}`
+        }
 
-    if (threeTimes >= 3.1) {
-        clearInterval(fourthValue)
-    }
-}, 97);
+        if (baseValue >= infoStats[indice].target) {
+            clearInterval(contador)
+        }
+    }, infoStats[indice].interval);
+})
 
 //Fecha o menu pela teclha "ESC"
 document.addEventListener('keydown', (e) =>{
