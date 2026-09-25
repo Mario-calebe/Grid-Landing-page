@@ -34,7 +34,6 @@ const infoStats = [
 ]
 // Abre e fecha o menu
 menu.addEventListener('click', (e) =>{
-    
     if (menuEstaAberto()){
         
         fecharMenu()
@@ -42,27 +41,27 @@ menu.addEventListener('click', (e) =>{
         
         abrirMenu()
     }
-    
 })
 
-//Contagem das estatisticas apartir do zeroa
-
+//Contagem das estatisticas apartir do zero
 valores.forEach((metric,indice) =>{
     // infoStats[indice].target
     let baseValue = 0
+    const {target,step,sufixo,interval} = infoStats[indice]
     let contador = setInterval(() => {
-        baseValue += infoStats[indice].step
+        baseValue += step
         if (Number.isInteger(baseValue)) {
-            metric.textContent = `${baseValue.toLocaleString('en-US')}${infoStats[indice].sufixo}`
+            metric.textContent = `${baseValue.toLocaleString('en-US')}${sufixo}`
 
         }else{
-            metric.textContent = `${baseValue.toFixed(1)}${infoStats[indice].sufixo}`
+            metric.textContent = `${baseValue.toFixed(1)}${sufixo}`
         }
 
-        if (baseValue >= infoStats[indice].target) {
+        if (baseValue >= target) {
+            baseValue = target
             clearInterval(contador)
         }
-    }, infoStats[indice].interval);
+    }, interval);
 })
 
 //Fecha o menu pela teclha "ESC"
