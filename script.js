@@ -37,7 +37,7 @@ fetch('stats.json').then((response) => {
     if (response.ok) {
         return response.json()
     }else{
-        throw new Error("Erro na proposta");
+        throw new Error("Erro na resposta");
     } 
 })
 .then((infoStats) =>{
