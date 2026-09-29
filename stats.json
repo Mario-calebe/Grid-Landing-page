@@ -1,0 +1,26 @@
+[
+    {
+        "target": 2.4,
+        "step": 0.1,
+        "sufixo": "M",
+        "interval": 70
+    },
+    {
+        "target": 1284,
+        "step": 2,
+        "sufixo": "",
+        "interval": 1
+    },
+    {
+        "target": 38,
+        "step": 0.2,
+        "sufixo": "K",
+        "interval": 10
+    },
+    {
+        "target": 3.1,
+        "step": 0.12,
+        "sufixo": "x",
+        "interval":97
+    }
+]

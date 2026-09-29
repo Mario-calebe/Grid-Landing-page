@@ -6,32 +6,67 @@ const primeiroElemento = linksFocaveis[0]
 const ultimoElemento = linksFocaveis[linksFocaveis.length - 1]
 
 const valores = document.querySelectorAll('.stat-value')
-const infoStats = [
-    {
-        target: 2.4,
-        step: 0.1,
-        sufixo: 'M',
-        interval: 70,
-    },
-    {
-        target: 1284,
-        step: 2,
-        sufixo: '',
-        interval: 1,
-    },
-    {
-        target: 38,
-        step: 0.2,
-        sufixo: 'K',
-        interval: 10,
-    },
-    {
-        target: 3.1,
-        step: 0.12,
-        sufixo: 'x',
-        interval:97,
-    },
-]
+// const infoStats = [
+//     {
+//         target: 2.4,
+//         step: 0.1,
+//         sufixo: 'M',
+//         interval: 70,
+//     },
+//     {
+//         target: 1284,
+//         step: 2,
+//         sufixo: '',
+//         interval: 1,
+//     },
+//     {
+//         target: 38,
+//         step: 0.2,
+//         sufixo: 'K',
+//         interval: 10,
+//     },
+//     {
+//         target: 3.1,
+//         step: 0.12,
+//         sufixo: 'x',
+//         interval:97,
+//     },
+// ]
+
+fetch('stats.json').then((response) => {
+    if (response.ok) {
+        return response.json()
+    }else{
+        throw new Error("Erro na proposta");
+    } 
+})
+.then((infoStats) =>{
+    console.log(infoStats);
+    
+    //Contagem das estatisticas apartir do zero
+    valores.forEach((metric,indice) =>{
+        let baseValue = 0
+        const {target,step,sufixo,interval} = infoStats[indice]
+        let contador = setInterval(() => {
+            baseValue += step
+            if (Number.isInteger(baseValue)) {
+                metric.textContent = `${baseValue.toLocaleString('en-US')}${sufixo}`
+                
+            }else{
+                metric.textContent = `${baseValue.toFixed(1)}${sufixo}`
+            }
+            
+            if (baseValue >= target) {
+                baseValue = target
+                clearInterval(contador)
+            }
+        }, interval);
+    })
+    
+}) 
+.catch((erro) => {
+        console.log(erro);
+    });
 // Abre e fecha o menu
 menu.addEventListener('click', (e) =>{
     if (menuEstaAberto()){
@@ -43,34 +78,13 @@ menu.addEventListener('click', (e) =>{
     }
 })
 
-//Contagem das estatisticas apartir do zero
-valores.forEach((metric,indice) =>{
-    // infoStats[indice].target
-    let baseValue = 0
-    const {target,step,sufixo,interval} = infoStats[indice]
-    let contador = setInterval(() => {
-        baseValue += step
-        if (Number.isInteger(baseValue)) {
-            metric.textContent = `${baseValue.toLocaleString('en-US')}${sufixo}`
-
-        }else{
-            metric.textContent = `${baseValue.toFixed(1)}${sufixo}`
-        }
-
-        if (baseValue >= target) {
-            baseValue = target
-            clearInterval(contador)
-        }
-    }, interval);
-})
-
 //Fecha o menu pela teclha "ESC"
 document.addEventListener('keydown', (e) =>{
     if (e.key === 'Escape' && dropdown.classList.contains('menu-aberto')) {
         fecharMenu()
         menu.focus()
     }
-    
+
     if (e.key === 'Tab' && !e.shiftKey ) {
         if (document.activeElement === ultimoElemento) {
             e.preventDefault()
