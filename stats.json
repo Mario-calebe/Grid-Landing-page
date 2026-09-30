@@ -1,6 +1,6 @@
 [
     {
-        "target": 2.4,
+        "target": 5,
         "step": 0.1,
         "sufixo": "M",
         "interval": 70

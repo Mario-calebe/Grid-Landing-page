@@ -41,24 +41,21 @@ fetch('stats.json').then((response) => {
     } 
 })
 .then((infoStats) =>{
-    console.log(infoStats);
-    
     //Contagem das estatisticas apartir do zero
     valores.forEach((metric,indice) =>{
         let baseValue = 0
         const {target,step,sufixo,interval} = infoStats[indice]
         let contador = setInterval(() => {
             baseValue += step
+            if (baseValue >= target) {
+                baseValue = target
+                clearInterval(contador)
+            }
             if (Number.isInteger(baseValue)) {
                 metric.textContent = `${baseValue.toLocaleString('en-US')}${sufixo}`
                 
             }else{
                 metric.textContent = `${baseValue.toFixed(1)}${sufixo}`
-            }
-            
-            if (baseValue >= target) {
-                baseValue = target
-                clearInterval(contador)
             }
         }, interval);
     })
@@ -122,6 +119,3 @@ function menuEstaAberto() {
     return dropdown.classList.contains('menu-aberto')
 }
 
-[...linksFocaveis].forEach((link, indice) => {
-  console.log(indice, link.textContent.trim(), link)
-})
