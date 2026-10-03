@@ -45,7 +45,7 @@ fetch('stats.json').then((response) => {
     valores.forEach((metric,indice) =>{
         let baseValue = 0
         const {target,step,sufixo,interval} = infoStats[indice]
-        let contador = setInterval(() => {
+        const contador = setInterval(() => {
             baseValue += step
             if (baseValue >= target) {
                 baseValue = target
@@ -65,7 +65,7 @@ fetch('stats.json').then((response) => {
         console.log(erro);
     });
 // Abre e fecha o menu
-menu.addEventListener('click', (e) =>{
+menu.addEventListener('click', () =>{
     if (menuEstaAberto()){
         
         fecharMenu()
