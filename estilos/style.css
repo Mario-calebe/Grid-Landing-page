@@ -97,7 +97,7 @@ button.menu{
     text-align: center;
     background-color: var(--Blue-700);
     font-size: 1.625rem;
-    padding: 1.875rem 0px;
+    padding: 1.875rem 0rem;
     
     position: absolute;
     left: 0%;
@@ -122,6 +122,10 @@ main{
 
 section.hero{
     padding: 1.875rem;
+
+    h1,p{
+        width: clamp(300px, 80vw, 500px);
+    }
 }
 
 section.hero, .metric-item{
@@ -131,7 +135,7 @@ section.hero, .metric-item{
 section.hero > h1{
     line-height: 1.2em;
     margin-block-end: 1.25rem;
-    font-size: 2.3em;
+    font-size: clamp(2.3rem,4.5vw,5rem);
 }
 
 h1,
@@ -143,7 +147,7 @@ span.stat-value{
 section.hero > p,
 h2{
     color:var(--Blue-200) ;
-    font-size: 1.0625rem;
+    font-size: clamp(1.0625rem, 2vw,1.3125rem );
     line-height: 1.5em;
 }
 
@@ -161,7 +165,7 @@ article.metric-item{
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-between;
-    gap: 170px;
+    gap: clamp(20px, 25vw, 170px);
     color: var(--Blue-200);
     font-size: 0.875rem;
 }

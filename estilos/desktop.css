@@ -21,16 +21,6 @@ section.hero{
     justify-content: center;
 }
 
-section.hero > h1{
-    font-size: 3.5em;
-}
-
-section.hero > h1,
-section.hero > p{
-    width: 385px;
-}
-
-
 section.metrics{
     grid-template: 1fr 1fr/ 1fr 1fr;
 }
