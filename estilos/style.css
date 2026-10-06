@@ -16,12 +16,9 @@
 
 html{
     background-color: var(--Blue-700);
+    overflow-x: clip;
 }
 
-html, body {
-    overflow: hidden;
-    width: 100%;
-}
 body{
     background-color: var(--Blue-700);
     font-family: 'inter', 'Times New Roman', Times, serif;
@@ -96,13 +93,13 @@ button.menu{
     gap: 0.9375rem;
     transform: translateX(0);
     visibility: visible;
-
+    
     text-align: center;
     width: 100%;
     background-color: var(--Blue-700);
     font-size: 1.625rem;
     padding: 1.875rem 0px;
-
+    
     position: absolute;
     left: 0%;
     top: 102%;
@@ -122,7 +119,6 @@ button.menu{
 main{
     display: grid;
     grid-template-columns: 1fr;
-    height: 87%;
 }
 
 section.hero{

@@ -4,11 +4,12 @@ body{
 
 main{
     grid-template:1fr / 1fr 1fr ;
+    height: calc(100% - 122px);
 }
 
 .menu-aberto{
     width: 25vw;
-    height: calc(100vh - 63px);
+    height: calc(100vh - 65px);
     left: 75%;
     text-align: end;
     padding-inline-end: 30px;
