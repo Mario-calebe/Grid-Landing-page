@@ -6,33 +6,6 @@ const primeiroElemento = linksFocaveis[0]
 const ultimoElemento = linksFocaveis[linksFocaveis.length - 1]
 
 const valores = document.querySelectorAll('.stat-value')
-// const infoStats = [
-//     {
-//         target: 2.4,
-//         step: 0.1,
-//         sufixo: 'M',
-//         interval: 70,
-//     },
-//     {
-//         target: 1284,
-//         step: 2,
-//         sufixo: '',
-//         interval: 1,
-//     },
-//     {
-//         target: 38,
-//         step: 0.2,
-//         sufixo: 'K',
-//         interval: 10,
-//     },
-//     {
-//         target: 3.1,
-//         step: 0.12,
-//         sufixo: 'x',
-//         interval:97,
-//     },
-// ]
-
 fetch('stats.json').then((response) => {
     if (response.ok) {
         return response.json()

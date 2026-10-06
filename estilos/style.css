@@ -17,12 +17,16 @@
 html{
     background-color: var(--Blue-700);
 }
+
+html, body {
+    overflow: hidden;
+    width: 100%;
+}
 body{
     background-color: var(--Blue-700);
     font-family: 'inter', 'Times New Roman', Times, serif;
     font-weight: 400;
     position: relative;
-    
 }
 html::-webkit-scrollbar{
     display: none;
@@ -44,7 +48,7 @@ header > nav{
     align-items: center;
 }
 
-nav > .logo > a{
+.logo > a{
     color: inherit;
     text-decoration: none;
     font-size: 0.875rem;
@@ -97,7 +101,7 @@ button.menu{
     visibility: visible;
 
     text-align: center;
-    width: 100vw;
+    width: 100%;
     background-color: var(--Blue-700);
     font-size: 1.625rem;
     padding: 1.875rem 0px;
@@ -134,7 +138,7 @@ section.hero, .metric-item{
 
 section.hero > h1{
     line-height: 1.2em;
-    margin-bottom: 1.25rem;
+    margin-block-end: 1.25rem;
     font-size: 2.3em;
 }
 

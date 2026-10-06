@@ -10,8 +10,8 @@ main{
     width: 25vw;
     height: calc(100vh - 63px);
     left: 75%;
-    text-align: right;
-    padding-right: 30px;
+    text-align: end;
+    padding-inline-end: 30px;
 }
 
 section.hero{
