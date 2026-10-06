@@ -16,7 +16,6 @@
 
 html{
     background-color: var(--Blue-700);
-    overflow-x: clip;
 }
 
 body{
@@ -27,6 +26,7 @@ body{
 }
 
 header{
+    overflow-x: clip;
     position: relative;
     z-index: 3;
     background-color: var(--Blue-700);
@@ -74,10 +74,10 @@ button.menu{
 
 .menu-fechado{
     position: absolute;
-    left:100%;
+    left:0;
     transform: translateX(100%);
     visibility: hidden;
-
+    width: 100%;
     transition: transform .3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -95,7 +95,6 @@ button.menu{
     visibility: visible;
     
     text-align: center;
-    width: 100%;
     background-color: var(--Blue-700);
     font-size: 1.625rem;
     padding: 1.875rem 0px;
