@@ -18,6 +18,10 @@ html{
     background-color: var(--Blue-700);
 }
 
+::-webkit-scrollbar{
+    display: none;
+}
+
 body{
     background-color: var(--Blue-700);
     font-family: 'inter', 'Times New Roman', Times, serif;
@@ -124,7 +128,7 @@ section.hero{
     padding: 1.875rem;
 
     h1,p{
-        width: clamp(300px, 80vw, 500px);
+        width: clamp(250px, 80vw, 500px);
     }
 }
 
@@ -133,7 +137,7 @@ section.hero, .metric-item{
 }
 
 section.hero > h1{
-    line-height: 1.2em;
+    line-height: 1.2;
     margin-block-end: 1.25rem;
     font-size: clamp(2.3rem,4.5vw,5rem);
 }
@@ -147,7 +151,7 @@ span.stat-value{
 section.hero > p,
 h2{
     color:var(--Blue-200) ;
-    font-size: clamp(1.0625rem, 2vw,1.3125rem );
+    font-size: clamp(1.0625rem, 0.2rem + 1.2vw,1.125rem );
     line-height: 1.5em;
 }
 
@@ -168,6 +172,10 @@ article.metric-item{
     gap: clamp(20px, 25vw, 170px);
     color: var(--Blue-200);
     font-size: 0.875rem;
+    
+    p{
+        font-size: clamp(0.875rem,0.2rem + 1vw, 1rem);
+    }
 }
 
 article.metric-item:hover{
