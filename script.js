@@ -4,8 +4,10 @@ const overlay = document.querySelector('.overlay')
 const linksFocaveis = dropdown.querySelectorAll('a')
 const primeiroElemento = linksFocaveis[0]
 const ultimoElemento = linksFocaveis[linksFocaveis.length - 1]
+const icon = document.getElementById('icon')
 
 const valores = document.querySelectorAll('.stat-value')
+
 fetch('stats.json').then((response) => {
     if (response.ok) {
         return response.json()
@@ -37,7 +39,9 @@ fetch('stats.json').then((response) => {
 .catch((erro) => {
         console.log(erro);
     });
+
 // Abre e fecha o menu
+
 menu.addEventListener('click', () =>{
     if (menuEstaAberto()){
         
@@ -73,22 +77,21 @@ document.addEventListener('keydown', (e) =>{
 function abrirMenu() {
     dropdown.classList.add('menu-aberto')
     
-    menu.setAttribute('src', 'icons/icon-close.svg')
+    icon.setAttribute('src', 'icons/icon-close.svg')
     overlay.classList.add('over-ativo')
-    menu.setAttribute('aria-expanded', 'true')
-    menu.setAttribute('aria-label', 'opened menu')
+    icon.setAttribute('aria-expanded', 'true')
+    icon.setAttribute('aria-label', 'opened menu')
 }
 
 function fecharMenu() {
     dropdown.classList.remove('menu-aberto')
     
-    menu.setAttribute('src', 'icons/icon-menu.svg')
+    icon.setAttribute('src', 'icons/icon-menu.svg')
     overlay.classList.remove('over-ativo')
-    menu.setAttribute('aria-expanded', 'false')
-    menu.setAttribute('aria-label', 'closed menu')
+    icon.setAttribute('aria-expanded', 'false')
+    icon.setAttribute('aria-label', 'closed menu')
 }
 
 function menuEstaAberto() {
     return dropdown.classList.contains('menu-aberto')
 }
-
