@@ -86,6 +86,8 @@ function abrirMenu() {
     overlay.classList.add('over-ativo')
     menu.setAttribute('aria-expanded', 'true')
     menu.setAttribute('aria-label', 'opened menu')
+
+    document.body.classList.add('no-scroll')
 }
 
 function fecharMenu() {
@@ -95,6 +97,9 @@ function fecharMenu() {
     overlay.classList.remove('over-ativo')
     menu.setAttribute('aria-expanded', 'false')
     menu.setAttribute('aria-label', 'closed menu')
+
+    document.body.classList.remove('no-scroll')
+
 }
 
 function menuEstaAberto() {

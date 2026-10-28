@@ -10,7 +10,7 @@ main{
 
 .menu-aberto{
     width: 25vw;
-    height: calc(100vh - 65px);
+    bottom: 0;
     left: 75%;
     text-align: end;
     padding-inline-end: 30px;
