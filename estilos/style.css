@@ -26,7 +26,7 @@ html{
 
 body{
     background-color: var(--Blue-700);
-    font-family: 'inter', 'Times New Roman', Times, serif;
+    font-family: 'inter', 'Arial', 'Helvetica', sans-serif;
     font-weight: 400;
     position: relative;
 }
