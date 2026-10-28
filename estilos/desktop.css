@@ -1,10 +1,11 @@
 body{
-    height: 100vh;
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
 }
 
 main{
     grid-template:1fr / 1fr 1fr ;
-    height: calc(100% - 122px);
 }
 
 .menu-aberto{
@@ -17,7 +18,7 @@ main{
 
 section.hero{
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: column ;
     justify-content: center;
 }
 
