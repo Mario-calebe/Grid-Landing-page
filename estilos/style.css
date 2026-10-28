@@ -16,10 +16,7 @@
 
 html{
     background-color: var(--Blue-700);
-}
-
-::-webkit-scrollbar{
-    display: none;
+    scrollbar-gutter: stable;
 }
 
 body{
