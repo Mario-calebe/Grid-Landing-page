@@ -92,7 +92,7 @@ button.menu{
 
 .menu-aberto{
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: column;
     gap: 0.9375rem;
     transform: translateX(0);
     visibility: visible;
@@ -104,6 +104,11 @@ button.menu{
     
     left: 0%;
     top: 65px;
+    max-height: calc(100vh - 65px);
+
+    overflow-y: scroll;
+    scrollbar-width: none;;
+
 }
 
 .menu-aberto > a {
