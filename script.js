@@ -87,7 +87,7 @@ function abrirMenu() {
     icon.setAttribute('src', 'icons/icon-close.svg')
     overlay.classList.add('over-ativo')
     menu.setAttribute('aria-expanded', 'true')
-    menu.setAttribute('aria-label', 'opened menu')
+    menu.setAttribute('aria-label', 'close the menu')
 
     document.body.classList.add('no-scroll')
 }
@@ -98,7 +98,7 @@ function fecharMenu() {
     icon.setAttribute('src', 'icons/icon-menu.svg')
     overlay.classList.remove('over-ativo')
     menu.setAttribute('aria-expanded', 'false')
-    menu.setAttribute('aria-label', 'closed menu')
+    menu.setAttribute('aria-label', 'open the menu')
 
     document.body.classList.remove('no-scroll')
 
