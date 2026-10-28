@@ -2,7 +2,7 @@ const menu = document.getElementById('menu')
 const dropdown = document.querySelector('div.menu-fechado')
 const overlay = document.querySelector('.overlay')
 const linksFocaveis = dropdown.querySelectorAll('a')
-const primeiroElemento = linksFocaveis[0]
+const primeiroElemento = menu
 const ultimoElemento = linksFocaveis[linksFocaveis.length - 1]
 const icon = document.getElementById('icon')
 
@@ -59,24 +59,26 @@ menu.addEventListener('click', () =>{
 
 //Fecha o menu pela teclha "ESC"
 document.addEventListener('keydown', (e) =>{
-    if (e.key === 'Escape' && dropdown.classList.contains('menu-aberto')) {
+    if (e.key === 'Escape' && menuEstaAberto()) {
         fecharMenu()
         menu.focus()
     }
-
-    if (e.key === 'Tab' && !e.shiftKey ) {
-        if (document.activeElement === ultimoElemento) {
-            e.preventDefault()
-            primeiroElemento.focus()
-        }        
-    }
-
-    if(e.key === 'Tab' && e.shiftKey){
-        if (document.activeElement === primeiroElemento) {
-            e.preventDefault()
-            ultimoElemento.focus()
+    if (menuEstaAberto()) {
+    
+        if (e.key === 'Tab' && !e.shiftKey ) {
+            if (document.activeElement === ultimoElemento) {
+                e.preventDefault()
+                primeiroElemento.focus()
+            }        
         }
-    } 
+        
+        if(e.key === 'Tab' && e.shiftKey){
+            if (document.activeElement === primeiroElemento) {
+                e.preventDefault()
+                ultimoElemento.focus()
+            }
+        } 
+    }
 })
 
 function abrirMenu() {
