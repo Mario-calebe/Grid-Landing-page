@@ -95,6 +95,7 @@ button.menu{
 .menu-aberto{
     display: flex;
     flex-flow: column;
+    align-items: center;
     gap: 0.9375rem;
     transform: translateX(0);
     visibility: visible;
@@ -117,6 +118,8 @@ button.menu{
     text-decoration: none;
     color: var(--White);
     font-weight: 500;
+    width: fit-content;
+    border-radius: 50%;
 }
 
 .menu-aberto > a:hover{
