@@ -160,7 +160,7 @@ section.hero > p,
 h2{
     color:var(--Blue-200) ;
     font-size: clamp(1.0625rem, 0.2rem + 1.2vw,1.125rem );
-    line-height: 1.5em;
+    line-height: 1.5;
 }
 
 section.metrics{
@@ -173,7 +173,7 @@ section.metrics{
 }
 
 article.metric-item{
-    padding: 1.5626rem;
+    padding: 1.5625rem;
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-between;
